@@ -15,13 +15,22 @@ set hlsearch
 set showcmd
 set laststatus=2
 
-set lines=55
-set columns=130
+if win_shell
+    set lines=55
+    set columns=150
+else
+    set lines=9999
+    set columns=9999
+endif
 
 set list
 set listchars=trail:·,tab:>-,eol:¬
 
-set guifont=Consolas:h10
+if win_shell
+    set guifont=Consolas:h10
+else
+    set guifont=Consolas:h14
+endif
 
 set shiftwidth=4
 set tabstop=4
@@ -121,10 +130,11 @@ else
     map <D-n> :tabnew<CR>
     map <D-x> :tabclose<CR>
     map <D-s> :w<CR>
-    map <D-w><D-w> <C-w><C-w>
+    map <D-w> <C-w><C-w>
 endif
 
 :command WQ wq
 :command Wq wq
 :command W w
 :command Q q
+:command E e

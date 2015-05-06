@@ -1,5 +1,8 @@
 set nocompatible
 filetype off
+
+let win_shell = (has('win32') || has('win64') && &shellcmdflag =~ '/')
+
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
@@ -12,10 +15,11 @@ set hlsearch
 set showcmd
 set laststatus=2
 
-set lines=55 columns=180
+set lines=55
+set columns=130
 
 set list
-set listchars=trail:·,tab:>-,eol:¬
+set listchars=trail:Â·,tab:>-,eol:Â¬
 
 set guifont=Consolas:h10
 
@@ -71,7 +75,6 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
-let win_shell = (has('win32') || has('win64') && &shellcmdflag =~ '/')
 let vimDir = win_shell ?  '$HOME/vimfiles' : '$HOME/.vim'
 let &runtimepath .= ',' . expand(vimDir . '/bundle/Vundle.vim')
 call vundle#rc(expand(vimDir . '/bundle'))
@@ -99,13 +102,29 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 let NERDTreeMinimalUI = 1
+let NERDTreeShowBookmarks = 1
 
 nmap ,n :NERDTreeTabsToggle<CR>
 nmap ,b :NERDTreeFromBookmark 
-map <C-l> :tabn<CR>
-map <C-h> :tabp<CR>
-map <C-n> :tabnew<CR>
-map <C-x> :tabclose<CR>
-map <C-s> :w<CR>
+if win_shell
+    map <C-l> :tabn<CR>
+    map <C-h> :tabp<CR>
+    map <C-n> :tabnew<CR>
+    map <C-x> :tabclose<CR>
+    map <C-s> :w<CR>
+else
+    map <D-l> :tabn<CR>
+    map <D-h> :tabp<CR>
+    map <D-n> :tabnew<CR>
+    map <D-x> :tabclose<CR>
+    map <D-s> :w<CR>
+    map <D-w><D-w> <C-w><C-w>
+endif
+
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q

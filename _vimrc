@@ -117,7 +117,8 @@ let g:syntastic_enable_sings = 1
 let g:syntastic_jsx_checkers = ["eslint"]
 let g:syntastic_js_checkers = ["eslint"]
 let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_scss_checkers = ["scss-lint"]
+let g:syntastic_scss_checkers = ["scss_lint"]
+let g:syntastic_scss_scss_lint_args='-c ~/.scss-lint.yml'
 
 let g:ctrlp_working_path_mode = 'c'
 
@@ -125,24 +126,13 @@ let NerdTreeRespectWildIgnore = 1
 nmap ,n :NERDTreeToggle<CR>
 nmap ,b :NERDTreeFromBookmark 
 
-if win_shell
-    nnoremap <C-l> :bnext<CR>
-    nnoremap <C-h> :bprevious<CR>
-    nnoremap <C-n> :enew<CR>
-    nnoremap <C-x> :bp <BAR> bd #<CR>
-    nnoremap <C-s> :w<CR>
-    nnoremap <C-o> :CtrlP D:\srv\<CR>
-    nnoremap <C-p> :CtrlP<CR>
-else
-    nnoremap <D-l> :bnext<CR>
-    nnoremap <D-h> :bprevious<CR>
-    nnoremap <D-n> :enew<CR>
-    nnoremap <D-x> :bp <BAR> bd #<CR>
-    nnoremap <D-s> :w<CR>
-    nnoremap <D-w> <C-w><C-w>
-    nnoremap <D-o> :CtrlP ~\Code\<CR>
-    nnoremap <D-p> :CtrlP<CR>
-endif
+nnoremap <C-l> :bnext<CR>
+nnoremap <C-h> :bprevious<CR>
+nnoremap <C-n> :enew<CR>
+nnoremap <C-x> :bp <BAR> bd #<CR>
+nnoremap <C-s> :w<CR>
+nnoremap <C-o> :CtrlP D:\srv\<CR>
+nnoremap <C-p> :CtrlP<CR>
 
 :command WQ wq
 :command Wq wq
@@ -153,3 +143,7 @@ endif
 nmap ,q :bp <BAR> bd #<CR>
 nmap ,v :vs<CR>
 nmap ,h :sp<CR>
+
+
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)

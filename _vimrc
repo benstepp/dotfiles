@@ -1,11 +1,10 @@
 set nocompatible
 filetype off
-
-let win_shell = (has('win32') || has('win64') && &shellcmdflag =~ '/')
-
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
+
+let win_shell = (has('win32') || has('win64') && &shellcmdflag =~ '/')
 
 set backspace=indent,eol,start
 set number
@@ -14,14 +13,9 @@ set ruler
 set hlsearch
 set showcmd
 set laststatus=2
+set autochdir
 
-if win_shell
-    set lines=55
-    set columns=150
-else
-    set lines=9999
-    set columns=9999
-endif
+set lines=52 columns=180
 
 set list
 set listchars=trail:·,tab:>-,eol:¬
@@ -36,6 +30,12 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
+
+set splitbelow
+set splitright
+
+set wildignore+=*/tmp/*,*.so,*.swp*,*.zip,*/node_modules/*
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*\\node_modules\\*
 
 set diffexpr=MyDiff()
 function MyDiff()
@@ -91,9 +91,10 @@ call vundle#begin(expand(vimDir . '/bundle'))
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
-Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
+
+Plugin 'scrooloose/syntastic'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
@@ -111,26 +112,36 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_enable_sings = 1
 
-let NERDTreeMinimalUI = 1
-let NERDTreeShowBookmarks = 1
+let g:syntastic_jsx_checkers = ["eslint"]
+let g:syntastic_js_checkers = ["eslint"]
+let g:syntastic_javascript_checkers = ["eslint"]
+let g:syntastic_scss_checkers = ["scss-lint"]
 
-nmap ,n :NERDTreeTabsToggle<CR>
+let g:ctrlp_working_path_mode = 'c'
+
+let NerdTreeRespectWildIgnore = 1
+nmap ,n :NERDTreeToggle<CR>
 nmap ,b :NERDTreeFromBookmark 
+
 if win_shell
-    map <C-l> :tabn<CR>
-    map <C-h> :tabp<CR>
-    map <C-n> :tabnew<CR>
-    map <C-x> :tabclose<CR>
-    map <C-s> :w<CR>
+    nnoremap <C-l> :bnext<CR>
+    nnoremap <C-h> :bprevious<CR>
+    nnoremap <C-n> :enew<CR>
+    nnoremap <C-x> :bp <BAR> bd #<CR>
+    nnoremap <C-s> :w<CR>
+    nnoremap <C-o> :CtrlP D:\srv\<CR>
+    nnoremap <C-p> :CtrlP<CR>
 else
-    map <D-l> :tabn<CR>
-    map <D-h> :tabp<CR>
-    map <D-n> :tabnew<CR>
-    map <D-x> :tabclose<CR>
-    map <D-s> :w<CR>
-    map <D-w> <C-w><C-w>
+    nnoremap <D-l> :bnext<CR>
+    nnoremap <D-h> :bprevious<CR>
+    nnoremap <D-n> :enew<CR>
+    nnoremap <D-x> :bp <BAR> bd #<CR>
+    nnoremap <D-s> :w<CR>
+    nnoremap <D-w> <C-w><C-w>
+    nnoremap <D-o> :CtrlP ~\Code\<CR>
+    nnoremap <D-p> :CtrlP<CR>
 endif
 
 :command WQ wq
@@ -138,3 +149,7 @@ endif
 :command W w
 :command Q q
 :command E e
+
+nmap ,q :bp <BAR> bd #<CR>
+nmap ,v :vs<CR>
+nmap ,h :sp<CR>

@@ -1,0 +1,91 @@
+linters:
+    Indentation:
+        width: 4
+    PropertySortOrder:
+        enabled: true
+        separate_groups: true
+        order:
+            - content
+            - display
+            - flex-direction
+            - flex-wrap
+            - flex-flow
+            - align-content
+            - align-items
+            - justify-content
+            - clear
+            - float
+            - overflow
+            - overflow-x
+            - overflow-y
+            - box-sizing
+            - width
+            - height
+            - max-width
+            - max-height
+            - margin 
+            - margin-top
+            - margin-right
+            - margin-bottom
+            - margin-left
+            - padding
+            - padding-top
+            - padding-right
+            - padding-bottom
+            - padding-left
+            -
+            - position
+            - z-index
+            - top
+            - right
+            - bottom
+            - left
+            -
+            - background
+            - background-attachment
+            - background-color
+            - background-image
+            - background-position
+            - background-position-x
+            - background-positon-y
+            - background-repeat
+            - background-size
+            - border
+            - border-top
+            - border-right
+            - border-bottom
+            - border-left
+            - border-radius
+            - box-shadow
+            - color
+            - cursor
+            - list-style-position
+            - list-style-type
+            - opacity
+            - outline
+            - pointer-events
+            - white-space
+            - -moz-appearance
+            - -webkit-appearance
+            -
+            - font-family
+            - font-size
+            - font-style
+            - font-variant
+            - font-weight
+            - letter-spacing
+            - line-height
+            - text-align
+            - text-decoration
+            - text-overflow
+            - text-shadow
+            - text-transform
+            -
+            - transform
+            - transition
+    NestingDepth:
+        enabled: false
+    SelectorDepth:
+        enabled: false
+    PlaceholderInExtend:
+        enabled: false

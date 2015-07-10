@@ -1,6 +1,5 @@
 let win_shell = (has('win32') || has('win64') && &shellcmdflag =~ '/')
 
-set autochdir
 set autoindent
 set backspace=indent,eol,start
 set columns=180
@@ -50,7 +49,7 @@ set wildignore+=*/tmp/*,*.so,*.swp*,*.zip,*/node_modules/*
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*\\node_modules\\*
 set wildmode=list:longest,list:full
 
-filetype off
+filetype plugin indent on
 syntax on
 colorscheme molokai
 

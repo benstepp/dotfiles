@@ -125,7 +125,9 @@ nnoremap J 10j
 nnoremap K 10k
 nnoremap ze zM
 nnoremap zE zM
+nnoremap ZE zM
 nnoremap zr zR
+nnoremap ZR zR
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-n> :enew<CR>

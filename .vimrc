@@ -2,7 +2,7 @@ let win_shell = (has('win32') || has('win64') && &shellcmdflag =~ '/')
 
 set autoindent
 set backspace=indent,eol,start
-set columns=180
+set columns=240
 set complete=.,w,t
 set cursorline
 set encoding=utf-8 nobomb
@@ -68,6 +68,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'beyondwords/vim-twig'
+Plugin 'tpope/vim-rails'
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -81,6 +82,9 @@ let delimitMate_expand_cr = 1
 let delitmitMate_expand_space = 1
 
 let g:molokai_original = 0
+if has("gui_running")
+  let g:rehash256 = 1
+endif
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -107,7 +111,7 @@ let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_scss_checkers = ["scss_lint"]
 let g:syntastic_scss_scss_lint_args='--config ~/.scss-lint.yml'
 
-let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_working_path_mode = 'r'
 
 let NerdTreeRespectWildIgnore = 1
 nnoremap ,n :NERDTreeToggle<CR>
@@ -125,9 +129,19 @@ nnoremap J 10j
 nnoremap K 10k
 nnoremap ze zM
 nnoremap zE zM
+nnoremap Ze zM
 nnoremap ZE zM
 nnoremap zr zR
+nnoremap Zr zR
 nnoremap ZR zR
+nnoremap zw zm
+nnoremap zW zm
+nnoremap Zw zm
+nnoremap ZW zm
+nnoremap zs zr
+nnoremap zS zr
+nnoremap Zs zr
+nnoremap ZS zr
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-n> :enew<CR>
@@ -135,8 +149,8 @@ nnoremap <C-x> :bp <BAR> bd #<CR>
 nnoremap <C-s> :w<CR>
 nnoremap <C-o> :CtrlP ~\Code\<CR>
 nnoremap <C-p> :CtrlP<CR>
-nnoremap <silent> n n:call HLNext(0.1)<cr>
-nnoremap <silent> N N:call HLNext(0.1)<cr>
+nnoremap <silent> n n:call HLNext(0.3)<cr>
+nnoremap <silent> N N:call HLNext(0.3)<cr>
 nnoremap ,q :bp <BAR> bd #<CR>
 nnoremap ,v :vs<CR>
 nnoremap ,h :sp<CR>
@@ -163,3 +177,10 @@ function! HLNext (blinktime)
 endfunction
 
 au BufNewFile,BufRead *.es6 set filetype=javascript
+
+hi clear CursorLine
+hi CursorLineNR cterm=bold
+augroup CLSet
+  autocmd! ColorScheme * hi clear CursorLine
+  autocmd! ColorScheme * hi CursorLineNR cterm=bold
+augroup END

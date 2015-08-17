@@ -108,8 +108,8 @@ let NerdTreeRespectWildIgnore = 1
 nnoremap ,n :NERDTreeToggle<CR>
 nnoremap ,b :NERDTreeFromBookmark 
 
-nnoremap <Up> ddkP
-nnoremap <Down> ddp
+nnoremap <Up> <NOP>
+nnoremap <Down> <NOP>
 nnoremap <Left> <NOP>
 nnoremap <Right> <NOP>
 vnoremap <Up> DVB_Drag('up')

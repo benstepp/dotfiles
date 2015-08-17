@@ -2,7 +2,6 @@ set nocompatible
 
 set autoindent
 set backspace=indent,eol,start
-"set columns=120
 set complete=.,w,t
 set cursorline
 set encoding=utf-8 nobomb
@@ -22,7 +21,6 @@ set ignorecase
 set incsearch
 set laststatus=2
 set lazyredraw
-"set lines=40
 set list
 set listchars=trail:·,tab:>-,eol:¬
 set mouse=a
@@ -50,8 +48,7 @@ set wildmode=list:longest,list:full
 
 filetype plugin indent on
 syntax on
-set t_Co=256
-colorscheme maui
+colorscheme molokai
 
 call plug#begin('~/.nvim/plugged')
 
@@ -103,8 +100,9 @@ let g:syntastic_js_checkers = ["eslint"]
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_scss_checkers = ["scss_lint"]
 let g:syntastic_scss_scss_lint_args='--config ~/.scss-lint.yml'
+let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
-let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_working_path_mode = 'r'
 
 let NerdTreeRespectWildIgnore = 1
 nnoremap ,n :NERDTreeToggle<CR>
@@ -132,8 +130,8 @@ nnoremap <C-x> :bp <BAR> bd #<CR>
 nnoremap <C-s> :w<CR>
 nnoremap <C-o> :CtrlP ~\Code\<CR>
 nnoremap <C-p> :CtrlP<CR>
-nnoremap <silent> n n:call HLNext(0.1)<cr>
-nnoremap <silent> N N:call HLNext(0.1)<cr>
+nnoremap <silent> n n:call HLNext(0.2)<cr>
+nnoremap <silent> N N:call HLNext(0.2)<cr>
 nnoremap ,q :bp <BAR> bd #<CR>
 nnoremap ,v :vs<CR>
 nnoremap ,h :sp<CR>

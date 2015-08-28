@@ -1,0 +1,10 @@
+[core]
+  editor = /usr/local/bin/nvim
+  excludesfile = ~/.gitignore
+[user]
+  name = Benjamin Stepp
+  email = me@benstepp.com
+[push]
+  default = simple
+[github]
+  user = benstepp

@@ -1,0 +1,11 @@
+.DS_Store
+
+*.log
+log/
+
+db/*.sqlite3
+node_modules
+
+*.swo
+*.swp
+*~

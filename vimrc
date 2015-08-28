@@ -2,6 +2,7 @@ set nocompatible
 
 set autoindent
 set backspace=indent,eol,start
+set breakindent
 set complete=.,w,t
 set cursorline
 set encoding=utf-8 nobomb
@@ -68,6 +69,7 @@ Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'scrooloose/snipmate-snippets'
 Plug 'lilydjwg/colorizer'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -100,7 +102,7 @@ let g:syntastic_js_checkers = ["eslint"]
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_scss_checkers = ["scss_lint"]
 let g:syntastic_scss_scss_lint_args='--config ~/.scss-lint.yml'
-let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
+let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of '}
 
 let g:ctrlp_working_path_mode = 'r'
 

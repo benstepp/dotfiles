@@ -53,23 +53,22 @@ colorscheme molokai
 
 call plug#begin('~/.nvim/plugged')
 
-Plug 'gmarik/Vundle.vim'
-Plug 'bling/vim-airline'
-Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'raimondi/delimitmate'
-
-Plug 'scrooloose/syntastic'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'beyondwords/vim-twig'
-
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
+Plug 'bling/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'garbas/vim-snipmate'
-Plug 'scrooloose/snipmate-snippets'
+Plug 'gmarik/Vundle.vim'
 Plug 'lilydjwg/colorizer'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'raimondi/delimitmate'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/snipmate-snippets'
+Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
+Plug 'tomtom/tlib_vim'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 

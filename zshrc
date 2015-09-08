@@ -85,5 +85,9 @@ alias sudo='sudo '
 alias vim='nvim'
 alias vi='nvim'
 alias http='python -m SimpleHTTPServer 9000'
+alias :q='exit'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export NVM_DIR="/Users/benjamin/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

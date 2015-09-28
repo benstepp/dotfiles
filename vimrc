@@ -45,6 +45,7 @@ set wildignore+=.DS_Store
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.psd
 set wildignore+=*/tmp/*,*.so,*.swp*,*.zip,*/node_modules/*
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*\\node_modules\\*
+set wildignore+=*/stylesheets/bourbon/*,*/stylesheets/neat/*
 set wildmode=list:longest,list:full
 
 filetype plugin indent on
@@ -68,6 +69,10 @@ Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'thoughtbot/vim-rspec'
+Plug 'jgdavey/tslime.vim'
 
 call plug#end()
 
@@ -164,6 +169,9 @@ call plug#end()
 
 let delimitMate_expand_cr = 1
 let delitmitMate_expand_space = 1
+let g:ctrlp_working_path_mode = 'r'
+let NerdTreeRespectWildIgnore = 1
+let g:rspec_command = ':!spring rspec --color {spec}'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -174,8 +182,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
@@ -189,9 +197,9 @@ let g:syntastic_js_checkers = ["eslint"]
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_scss_checkers = ["scss_lint"]
 let g:syntastic_scss_scss_lint_args='--config ~/.scss-lint.yml'
+let g:syntastic_ruby_checkers=['rubocop', 'mri']
+let g:syntastic_ruby_rubocop_exec='~/.rvm/gems/ruby-2.2.2/bin/rubocop'
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of '}
-
-let g:ctrlp_working_path_mode = 'r'
 
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
@@ -203,9 +211,13 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-let NerdTreeRespectWildIgnore = 1
-nnoremap ,n :NERDTreeToggle<CR>
-nnoremap ,b :NERDTreeFromBookmark
+let mapleader = ' '
+nnoremap <Leader>q :bp <BAR> bd #<CR>
+nnoremap <Leader>v :vs<CR>
+nnoremap <Leader>h :sp<CR>
+nnoremap <Leader>t :w<CR>:call RunCurrentSpecFile()<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>b :NERDTreeFromBookmark
 
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
@@ -229,9 +241,6 @@ nnoremap <C-x> :bp <BAR> bd #<CR>
 nnoremap <C-s> :w<CR>
 nnoremap <C-o> :CtrlP ~\Code\<CR>
 nnoremap <C-p> :CtrlP<CR>
-nnoremap ,q :bp <BAR> bd #<CR>
-nnoremap ,v :vs<CR>
-nnoremap ,h :sp<CR>
 
 :command WQ wq
 :command Wq wq

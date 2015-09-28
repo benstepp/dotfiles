@@ -81,13 +81,15 @@ source $ZSH/oh-my-zsh.sh
 
 PROMPT='[%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{$fg[green]%}%c%{$reset_color%}]$ '
 
+export PGPASSFILE='~/.pgpass'
+
 alias sudo='sudo '
 alias vim='nvim'
 alias vi='nvim'
 alias http='python -m SimpleHTTPServer 9000'
-alias :q='exit'
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export EDITOR='nvim'
 
 export NVM_DIR="/Users/benjamin/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -1,0 +1,25 @@
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - '**/bin/rake'
+    - '**/bin/rails'
+    - '**/GemFile'
+    - '**/db/**/*'
+    - '**/test/**/*'
+    - '**/spec/dummy/bin/**/*'
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Style/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Style/PredicateName:
+  Enabled: false

@@ -8,3 +8,8 @@
   default = simple
 [github]
   user = benstepp
+[merge]
+  ff = only
+[alias]
+  pr = pull-request
+  db = !sh -c 'git branch -D $1 && git push origin :$1' -

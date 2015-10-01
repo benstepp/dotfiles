@@ -171,7 +171,9 @@ let delimitMate_expand_cr = 1
 let delitmitMate_expand_space = 1
 let g:ctrlp_working_path_mode = 'r'
 let NerdTreeRespectWildIgnore = 1
-let g:rspec_command = ':!spring rspec --color {spec}'
+let g:rspec_command = ':VtrSendCommand! spring rspec --color {spec}'
+let g:VtrOrientation = 'h'
+let g:VtrPercentage = 30
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -201,9 +203,6 @@ let g:syntastic_ruby_checkers=['rubocop', 'mri']
 let g:syntastic_ruby_rubocop_exec='~/.rvm/gems/ruby-2.2.2/bin/rubocop'
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of '}
 
-let g:VtrOrientatino = 'h'
-let g:VtrPercentage = 30
-
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
   let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
@@ -218,9 +217,11 @@ let mapleader = ' '
 nnoremap <Leader>q :bp <BAR> bd #<CR>
 nnoremap <Leader>v :vs<CR>
 nnoremap <Leader>h :sp<CR>
-nnoremap <Leader>t :w<CR>:call RunCurrentSpecFile()<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
-nnoremap <Leader>b :NERDTreeFromBookmark
+nnoremap <silent> <Leader>t :w<CR>:call RunCurrentSpecFile()<CR>
+nnoremap <silent> <Leader>s :w<CR>:call RunNearestSpec()<CR>
+nnoremap <silent> <Leader>l :w<CR>:call RunLastSpec()<CR>
+nnoremap <silent> <Leader>fr :call VtrFocusRunner()<CR>
 
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>

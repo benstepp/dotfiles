@@ -56,6 +56,7 @@ call plug#begin('~/.nvim/plugged')
 Plug 'beyondwords/vim-twig'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'christoomey/vim-tmux-runner'
 Plug 'garbas/vim-snipmate'
 Plug 'gmarik/Vundle.vim'
 Plug 'lilydjwg/colorizer'
@@ -72,7 +73,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'thoughtbot/vim-rspec'
-Plug 'jgdavey/tslime.vim'
 
 call plug#end()
 
@@ -200,6 +200,9 @@ let g:syntastic_scss_scss_lint_args='--config ~/.scss-lint.yml'
 let g:syntastic_ruby_checkers=['rubocop', 'mri']
 let g:syntastic_ruby_rubocop_exec='~/.rvm/gems/ruby-2.2.2/bin/rubocop'
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of '}
+
+let g:VtrOrientatino = 'h'
+let g:VtrPercentage = 30
 
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"

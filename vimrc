@@ -31,7 +31,7 @@ set nostartofline
 set number
 set numberwidth=4
 set ruler
-set shell=/bin/sh
+set shell=/bin/bash
 set shiftwidth=2
 set shortmess=atI
 set showcmd
@@ -171,7 +171,7 @@ let delimitMate_expand_cr = 1
 let delitmitMate_expand_space = 1
 let g:ctrlp_working_path_mode = 'r'
 let NerdTreeRespectWildIgnore = 1
-let g:rspec_command = ':VtrSendCommand! spring rspec --color {spec}'
+let g:rspec_command = ':call UnzoomTmux() | VtrSendCommand! spring rspec --color {spec}'
 let g:VtrOrientation = 'h'
 let g:VtrPercentage = 30
 
@@ -200,18 +200,8 @@ let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_scss_checkers = ["scss_lint"]
 let g:syntastic_scss_scss_lint_args='--config ~/.scss-lint.yml'
 let g:syntastic_ruby_checkers=['rubocop', 'mri']
-let g:syntastic_ruby_rubocop_exec='~/.rvm/gems/ruby-2.2.2/bin/rubocop'
+let g:syntastic_ruby_rubocop_exec='~/.rbenv/shims/rubocop'
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of '}
-
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
 
 let mapleader = ' '
 nnoremap <Leader>q :bp <BAR> bd #<CR>
@@ -221,7 +211,8 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>t :w<CR>:call RunCurrentSpecFile()<CR>
 nnoremap <silent> <Leader>s :w<CR>:call RunNearestSpec()<CR>
 nnoremap <silent> <Leader>l :w<CR>:call RunLastSpec()<CR>
-nnoremap <silent> <Leader>fr :call VtrFocusRunner()<CR>
+nnoremap <silent> <Leader>fr :VtrFocusRunner<CR>
+nnoremap <silent> <Leader>fe :VtrDetachRunner<CR>
 
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
@@ -270,3 +261,10 @@ augroup NoSwap
 augroup END
 
 autocmd BufWritePre * :%s/\s\+$//e
+
+function! UnzoomTmux()
+  if system('tmux list-panes -F "#F"') !~# 'Z'
+  else
+    call system('tmux resize-pane -Z')
+  endif
+endfunction

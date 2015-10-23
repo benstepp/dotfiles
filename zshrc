@@ -84,7 +84,13 @@ PROMPT='[%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{
 
 export PGPASSFILE='~/.pgpass'
 
+alias rgm='rails g migration'
+alias rs='rails s'
+
 alias g='git'
+alias gs='git status'
+alias gc='git commit -v'
+alias gr='git fetch && git rebase -i origin/master'
 alias sudo='sudo '
 alias vim='nvim'
 alias vi='nvim'

@@ -69,6 +69,7 @@ Plug 'scrooloose/snipmate-snippets'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'tomtom/tlib_vim'
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
@@ -171,14 +172,14 @@ let delimitMate_expand_cr = 1
 let delitmitMate_expand_space = 1
 let g:ctrlp_working_path_mode = 'r'
 let NerdTreeRespectWildIgnore = 1
-let g:rspec_command = ':call UnzoomTmux() | VtrSendCommand! spring rspec --color {spec}'
+let g:rspec_command = ':call UnzoomTmux() | VtrSendCommand! RAILS_ENV=test spring rspec --color {spec}'
 let g:VtrOrientation = 'h'
 let g:VtrPercentage = 30
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:aitline_enable_syntastic = 1
+let g:airline#extensions#syntastic#enabled = 1
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -208,6 +209,7 @@ nnoremap <Leader>q :bp <BAR> bd #<CR>
 nnoremap <Leader>v :vs<CR>
 nnoremap <Leader>h :sp<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>= mpgg=G'p
 nnoremap <silent> <Leader>t :w<CR>:call RunCurrentSpecFile()<CR>
 nnoremap <silent> <Leader>s :w<CR>:call RunNearestSpec()<CR>
 nnoremap <silent> <Leader>l :w<CR>:call RunLastSpec()<CR>
@@ -222,8 +224,6 @@ vnoremap <Up> DVB_Drag('up')
 vnoremap <Down> DVB_Drag('down')
 vnoremap <Left> DVB_Drag('left')
 vnoremap <Right> DVB_Drag('right')
-nnoremap J 10j
-nnoremap K 10k
 nnoremap ze zM
 nnoremap zE zM
 nnoremap ZE zM

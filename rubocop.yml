@@ -23,3 +23,8 @@ Style/EmptyLinesAroundClassBody:
 
 Style/PredicateName:
   Enabled: false
+
+Style/RegexpLiteral:
+  AllowInnerSlashes: false
+  EnforcedStyle: slashes
+  Enabled: false

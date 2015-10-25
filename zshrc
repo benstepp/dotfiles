@@ -88,6 +88,7 @@ alias rgm='rails g migration'
 alias rs='rails s'
 
 alias g='git'
+alias ga='git add'
 alias gs='git status'
 alias gc='git commit -v'
 alias gr='git fetch && git rebase -i origin/master'

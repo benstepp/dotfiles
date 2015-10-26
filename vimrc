@@ -209,7 +209,7 @@ nnoremap <Leader>q :bp <BAR> bd #<CR>
 nnoremap <Leader>v :vs<CR>
 nnoremap <Leader>h :sp<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
-nnoremap <Leader>= mpLmlHmhgg=G'l'h'l'h'p
+nnoremap <Leader>= mpHmhgg=G'hzt'p
 nnoremap <silent> <Leader>t :w<CR>:call RunCurrentSpecFile()<CR>
 nnoremap <silent> <Leader>s :w<CR>:call RunNearestSpec()<CR>
 nnoremap <silent> <Leader>l :w<CR>:call RunLastSpec()<CR>
@@ -234,7 +234,6 @@ nnoremap <C-h> :bprevious<CR>
 nnoremap <C-n> :enew<CR>
 nnoremap <C-x> :bp <BAR> bd #<CR>
 nnoremap <C-s> :w<CR>
-nnoremap <C-o> :CtrlP ~\Code\<CR>
 nnoremap <C-p> :CtrlP<CR>
 
 :command WQ wq

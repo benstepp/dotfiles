@@ -58,7 +58,6 @@ Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'garbas/vim-snipmate'
-Plug 'gmarik/Vundle.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'mxw/vim-jsx'
@@ -220,6 +219,10 @@ nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 nnoremap <Left> <NOP>
 nnoremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
 vnoremap <Up> DVB_Drag('up')
 vnoremap <Down> DVB_Drag('down')
 vnoremap <Left> DVB_Drag('left')

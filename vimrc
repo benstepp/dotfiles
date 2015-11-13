@@ -58,11 +58,13 @@ Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'garbas/vim-snipmate'
+Plug 'jgdavey/tslime.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'raimondi/delimitmate'
+Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/snipmate-snippets'
 Plug 'scrooloose/syntastic'
@@ -170,8 +172,11 @@ call plug#end()
 let delimitMate_expand_cr = 1
 let delitmitMate_expand_space = 1
 let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:typescript_indent_disable = 1
 let NerdTreeRespectWildIgnore = 1
-let g:rspec_command = ':call UnzoomTmux() | VtrSendCommand! RAILS_ENV=test spring rspec --color {spec}'
+"let g:rspec_command = ':call UnzoomTmux() | VtrSendCommand! RAILS_ENV=test spring rspec --color {spec}'
+let g:rspec_command = ':call Send_to_Tmux("RAILS_ENV=test spring rspec --color {spec}\n")'
 let g:VtrOrientation = 'h'
 let g:VtrPercentage = 30
 

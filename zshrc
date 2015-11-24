@@ -88,6 +88,7 @@ alias rgm='rails g migration'
 alias rs='rails s'
 
 alias g='hub'
+alias git='hub'
 alias ga='hub add'
 alias gs='hub status'
 alias gc='hub commit -v'

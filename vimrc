@@ -58,6 +58,7 @@ Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 Plug 'jgdavey/tslime.vim'
 Plug 'lilydjwg/colorizer'
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -213,6 +214,7 @@ nnoremap <Leader>q :bp <BAR> bd #<CR>
 nnoremap <Leader>v :vs<CR>
 nnoremap <Leader>h :sp<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>= mpHmhgg=G'hzt'p
 nnoremap <silent> <Leader>t :w<CR>:call RunCurrentSpecFile()<CR>
 nnoremap <silent> <Leader>s :w<CR>:call RunNearestSpec()<CR>

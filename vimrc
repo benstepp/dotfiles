@@ -243,7 +243,6 @@ nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-n> :enew<CR>
 nnoremap <C-x> :bp <BAR> bd #<CR>
-nnoremap <C-s> :w<CR>
 nnoremap <C-p> :CtrlP<CR>
 
 :command WQ wq

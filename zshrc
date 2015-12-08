@@ -85,7 +85,7 @@ PROMPT='[%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{
 export PGPASSFILE='~/.pgpass'
 
 alias rgm='rails g migration'
-alias rs='rails s'
+alias rs="rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')"
 
 alias g='hub'
 alias git='hub'

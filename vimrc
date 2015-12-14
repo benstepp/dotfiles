@@ -60,15 +60,17 @@ Plug 'christoomey/vim-tmux-runner'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 Plug 'jgdavey/tslime.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'lilydjwg/colorizer'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
+"Plug 'quramy/tsuquyomi'
 Plug 'raimondi/delimitmate'
-Plug 'leafgarland/typescript-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/snipmate-snippets'
 Plug 'scrooloose/syntastic'
+Plug 'shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-abolish'
@@ -191,6 +193,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_disabled_filetypes = ['html', 'typescript']
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
@@ -199,15 +202,15 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_html_checkers = [""]
-let g:syntastic_jsx_checkers = ["eslint"]
-let g:syntastic_js_checkers = ["eslint"]
-let g:syntastic_javascript_checkers = ["eslint"]
+let g:syntastic_jsx_checkers = ['eslint']
+let g:syntastic_js_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_scss_checkers = ["scss_lint"]
 let g:syntastic_scss_scss_lint_args='--config ~/.scss-lint.yml'
 let g:syntastic_ruby_checkers=['rubocop', 'mri']
 let g:syntastic_ruby_rubocop_exec='~/.rbenv/shims/rubocop'
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of '}
+"let g:syntastic_typescript_tsc_args = '--project ' + getcwd()
 
 let mapleader = ' '
 nnoremap <Leader>q :bp <BAR> bd #<CR>

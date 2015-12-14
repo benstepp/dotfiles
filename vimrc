@@ -23,7 +23,8 @@ set incsearch
 set laststatus=2
 set lazyredraw
 set list
-set listchars=trail:·,tab:>-,eol:¬
+set listchars=trail:·,tab:>-
+",eol:¬
 set mouse=a
 set noerrorbells
 set noshowmode

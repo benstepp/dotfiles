@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git docker)
 
 # User configuration
 
@@ -85,8 +85,13 @@ PROMPT='[%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{
 export PGPASSFILE='~/.pgpass'
 
 alias rgm='rails g migration'
-alias rs="rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')"
+alias rs='rails server'
+alias rc='rails console'
+alias rsb="rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')"
+alias rdbm='rake db:migrate && RAILS_ENV=test rake db:migrate'
+alias rdbr='rake db:rollback && RAILS_ENV=test rake db:rollback'
 
+alias d='docker-compose run web'
 alias g='hub'
 alias git='hub'
 alias ga='hub add'
@@ -102,3 +107,4 @@ alias http='python -m SimpleHTTPServer 9000'
 export EDITOR='nvim'
 
 eval "$(rbenv init -)"
+eval "$(docker-machine env default)"

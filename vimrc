@@ -180,7 +180,8 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 let g:typescript_indent_disable = 1
 let NerdTreeRespectWildIgnore = 1
 "let g:rspec_command = ':call UnzoomTmux() | VtrSendCommand! RAILS_ENV=test spring rspec --color {spec}'
-let g:rspec_command = ':call Send_to_Tmux("RAILS_ENV=test spring rspec --color {spec}\n")'
+"let g:rspec_command = ':call Send_to_Tmux("RAILS_ENV=test spring rspec --color {spec}\n")'
+let g:rspec_command = ':call Send_to_Tmux("RAILS_ENV=test rspec --color {spec}\n")'
 let g:VtrOrientation = 'h'
 let g:VtrPercentage = 30
 

@@ -32,7 +32,7 @@ set nostartofline
 set number
 set numberwidth=4
 set ruler
-set shell=/bin/bash
+set shell=/bin/zsh
 set shiftwidth=2
 set shortmess=atI
 set showcmd

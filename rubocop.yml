@@ -5,7 +5,8 @@ AllCops:
   Exclude:
     - '**/bin/rake'
     - '**/bin/rails'
-    - '**/GemFile'
+    - '**/Gemfile'
+    - '**/Gemfile.lock'
     - '**/db/**/*'
     - '**/test/**/*'
     - '**/spec/dummy/bin/**/*'

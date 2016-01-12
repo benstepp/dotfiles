@@ -36,6 +36,7 @@ alias sudo='sudo '
 alias vim='nvim'
 alias vi='nvim'
 alias http='python -m SimpleHTTPServer 9000'
+alias z='cd /Volumes/Z-Drive/'
 
 export EDITOR='nvim'
 

@@ -1,0 +1,21 @@
+{
+  "segments": {
+    "right": [
+      {
+        "function": "powerline.segments.common.players.spotify",
+        "name": "spotify"
+      },
+      {
+        "function": "powerline.segments.common.time.date"
+      },
+      {
+        "function": "powerline.segments.common.time.date",
+        "name": "time",
+        "args": {
+          "format": "%H:%M",
+          "istime": true
+        }
+      }
+    ]
+  }
+}

@@ -5,7 +5,7 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-plugins=(git docker)
+plugins=()
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
 export PATH="~/.rbenv/bin:$PATH"
@@ -29,6 +29,7 @@ alias g='hub'
 alias git='hub'
 alias ga='hub add'
 alias gs='hub status && hub --no-pager diff --stat'
+alias gp='hub push'
 alias gc='hub commit -v'
 alias gr='hub fetch && hub rebase -i origin/master'
 alias gpr='hub pull-request'
@@ -42,3 +43,9 @@ export EDITOR='nvim'
 
 eval "$(rbenv init -)"
 eval "$(docker-machine env default)"
+
+shitpostgres() {
+  launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+  rm /usr/local/var/postgres/postmaster.pid
+  launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+}

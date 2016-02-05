@@ -46,6 +46,7 @@ set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.psd
 set wildignore+=*/tmp/*,*.so,*.swp*,*.zip,*/node_modules/*
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*\\node_modules\\*
 set wildignore+=*/stylesheets/bourbon/*,*/stylesheets/neat/*
+set wildignore+=*/wp-admin/*,*/wp-includes/*
 set wildmode=list:longest,list:full
 
 filetype plugin indent on
@@ -175,7 +176,7 @@ hi SpecialKey      ctermfg=59
 let delimitMate_expand_cr = 1
 let delitmitMate_expand_space = 1
 let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:typescript_indent_disable = 1
 let NerdTreeRespectWildIgnore = 1
 let g:rspec_command = ':call Send_to_Tmux("RAILS_ENV=test rspec --color {spec}\n")'
@@ -236,6 +237,7 @@ highlight ColorColumn ctermbg=160 guibg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
 au BufNewFile,BufRead *.es6 set filetype=javascript
+au BufNewFile,BufRead *.twig set filetype=twig
 
 hi clear CursorLine
 hi CursorLineNR cterm=bold

@@ -55,11 +55,11 @@ syntax on
 call plug#begin('~/.nvim/plugged')
 
 Plug 'benekastah/neomake'
-Plug 'beyondwords/vim-twig'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'garbas/vim-snipmate'
+Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'honza/vim-snippets'
 Plug 'jgdavey/tslime.vim'
 Plug 'leafgarland/typescript-vim'
@@ -237,7 +237,7 @@ highlight ColorColumn ctermbg=160 guibg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
 au BufNewFile,BufRead *.es6 set filetype=javascript
-au BufNewFile,BufRead *.twig set filetype=twig
+au BufNewFile,BufRead *.twig set filetype=jinja
 
 hi clear CursorLine
 hi CursorLineNR cterm=bold

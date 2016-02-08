@@ -20,10 +20,8 @@ export PGPASSFILE='~/.pgpass'
 alias rgm='rails g migration'
 alias rs='rails server'
 alias rc='rails console'
-alias rsb="rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')"
 alias rdbm='rake db:migrate && RAILS_ENV=test rake db:migrate'
 alias rdbr='rake db:rollback && RAILS_ENV=test rake db:rollback'
-
 alias d='docker-compose run web'
 alias g='hub'
 alias git='hub'
@@ -48,4 +46,8 @@ shitpostgres() {
   launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
   rm /usr/local/var/postgres/postmaster.pid
   launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+}
+
+rsb() {
+  rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')
 }

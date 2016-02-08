@@ -188,17 +188,11 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#syntastic#enabled = 1
 
-<<<<<<< HEAD
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_js_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
 "let g:neomake_scss_enabled_makers = ['scsslint']
 "let g:neomake_scss_scsslint_maker = { 'args': ['--config ~/.scss-lint.yml']}
-=======
-let g:neomake_javascript_enabled_makers = ['standard']
-let g:neomake_js_enabled_makers = ['standard']
-let g:neomake_jsx_enabled_makers = ['standard']
->>>>>>> e7bd2b3... php twig is shit
 let g:neomake_ruby_enabled_makers = ['rubocop']
 
 let mapleader = ' '

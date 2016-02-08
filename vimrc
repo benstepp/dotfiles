@@ -59,7 +59,7 @@ Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'garbas/vim-snipmate'
-Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'glench/vim-jinja2-syntax'
 Plug 'honza/vim-snippets'
 Plug 'jgdavey/tslime.vim'
 Plug 'leafgarland/typescript-vim'
@@ -188,11 +188,17 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#syntastic#enabled = 1
 
+<<<<<<< HEAD
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_js_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
 "let g:neomake_scss_enabled_makers = ['scsslint']
 "let g:neomake_scss_scsslint_maker = { 'args': ['--config ~/.scss-lint.yml']}
+=======
+let g:neomake_javascript_enabled_makers = ['standard']
+let g:neomake_js_enabled_makers = ['standard']
+let g:neomake_jsx_enabled_makers = ['standard']
+>>>>>>> e7bd2b3... php twig is shit
 let g:neomake_ruby_enabled_makers = ['rubocop']
 
 let mapleader = ' '
@@ -262,3 +268,4 @@ endfunction
 
 autocmd! BufReadPost * Neomake
 autocmd! BufWritePost * Neomake
+let g:loaded_airline_themes=1

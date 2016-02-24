@@ -36,6 +36,7 @@ alias vim='nvim'
 alias vi='nvim'
 alias http='python -m SimpleHTTPServer 9000'
 alias z='cd /Volumes/Z-Drive/'
+alias wds='node_modules/webpack-dev-server/bin/webpack-dev-server.js'
 
 export EDITOR='nvim'
 

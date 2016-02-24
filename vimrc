@@ -178,6 +178,7 @@ let delitmitMate_expand_space = 1
 let g:ctrlp_working_path_mode = 'r'
 " let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:typescript_indent_disable = 1
+let g:jsx_ext_required = 0
 let NerdTreeRespectWildIgnore = 1
 let g:rspec_command = ':call Send_to_Tmux("RAILS_ENV=test rspec --color {spec}\n")'
 let g:VtrOrientation = 'h'

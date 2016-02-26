@@ -1,6 +1,7 @@
 set nocompatible
 
 set autoindent
+set background=dark
 set backspace=indent,eol,start
 set breakindent
 set complete=.,w,t
@@ -183,6 +184,7 @@ let NerdTreeRespectWildIgnore = 1
 let g:rspec_command = ':call Send_to_Tmux("RAILS_ENV=test rspec --color {spec}\n")'
 let g:VtrOrientation = 'h'
 let g:VtrPercentage = 30
+let g:markdown_preview_eager = 1
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '

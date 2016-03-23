@@ -52,3 +52,9 @@ shitpostgres() {
 rsb() {
   rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')
 }
+
+delete_all_docker_shit() {
+  docker stop $(docker ps -a -q)
+  docker rm $(docker ps -a -q)
+  docker volume rm $(docker volume ls -q)
+}

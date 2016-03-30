@@ -45,7 +45,7 @@ eval "$(docker-machine env default)"
 
 shitpostgres() {
   launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
-  rm /usr/local/var/postgres/postmaster.pid
+  rm /usr/local/var/postgres/postmaster.pid &>/dev/null
   launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
 }
 

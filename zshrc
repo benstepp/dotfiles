@@ -57,4 +57,5 @@ delete_all_docker_shit() {
   docker stop $(docker ps -a -q)
   docker rm $(docker ps -a -q)
   docker volume rm $(docker volume ls -q)
+  docker images -q |xargs docker rmi
 }

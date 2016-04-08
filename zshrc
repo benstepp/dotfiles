@@ -59,3 +59,7 @@ delete_all_docker_shit() {
   docker volume rm $(docker volume ls -q)
   docker images -q |xargs docker rmi
 }
+
+docker_aws() {
+  eval $(aws ecr get-login --region us-east-1)
+}

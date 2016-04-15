@@ -219,6 +219,8 @@ inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
+nnoremap <Leader>e zM
+nnoremap <Leader>r zR
 nnoremap ze zM
 nnoremap zE zM
 nnoremap ZE zM
@@ -266,3 +268,4 @@ endfunction
 autocmd! BufReadPost * Neomake
 autocmd! BufWritePost * Neomake
 let g:loaded_airline_themes=1
+autocmd FileType javascript :set fmr=/**,*/ fdm=marker fdc=1

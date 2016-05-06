@@ -219,13 +219,8 @@ inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
-nnoremap <Leader>e zM
-nnoremap <Leader>r zR
-nnoremap ze zM
-nnoremap zE zM
-nnoremap ZE zM
-nnoremap zr zR
-nnoremap ZR zR
+nnoremap <Leader>r zM
+nnoremap <Leader>e zR
 nnoremap <C-l> :bnext<CR>
 nnoremap <C-h> :bprevious<CR>
 nnoremap <C-n> :enew<CR>

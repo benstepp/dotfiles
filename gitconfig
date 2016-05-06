@@ -13,3 +13,4 @@
 [alias]
   pr = pull-request
   db = !sh -c 'git branch -D $1 && git push origin :$1' -
+  mu = !sh -c 'git checkout master && git fetch upstream && git merge upstream/master && git push'

@@ -64,7 +64,6 @@ Plug 'glench/vim-jinja2-syntax'
 Plug 'honza/vim-snippets'
 Plug 'jgdavey/tslime.vim'
 Plug 'leafgarland/typescript-vim'
-Plug 'lilydjwg/colorizer'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'mxw/vim-jsx'
 Plug 'othree/yajs.vim'
@@ -194,8 +193,6 @@ let g:airline#extensions#syntastic#enabled = 1
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_js_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
-"let g:neomake_scss_enabled_makers = ['scsslint']
-"let g:neomake_scss_scsslint_maker = { 'args': ['--config ~/.scss-lint.yml']}
 let g:neomake_ruby_enabled_makers = ['rubocop']
 
 let mapleader = ' '

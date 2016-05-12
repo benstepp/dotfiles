@@ -233,6 +233,7 @@ nnoremap <C-p> :CtrlP<CR>
 highlight ColorColumn ctermbg=160 guibg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
+au BufNewFile,BufRead Dockerfile* set filetype=dockerfile
 au BufNewFile,BufRead *.es6 set filetype=javascript
 au BufNewFile,BufRead *.twig set filetype=jinja
 

@@ -56,6 +56,7 @@ syntax on
 call plug#begin('~/.nvim/plugged')
 
 Plug 'benekastah/neomake'
+Plug 'benjie/neomake-local-eslint.vim'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'christoomey/vim-tmux-runner'

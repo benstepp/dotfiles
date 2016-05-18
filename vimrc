@@ -203,6 +203,7 @@ nnoremap <Leader>h :sp<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>= mpHmhgg=G'hzt'p
+nnoremap <Leader>-  vi{:'<,'>sort<CR>
 nnoremap <silent> <Leader>t :w<CR>:call RunCurrentSpecFile()<CR>
 nnoremap <silent> <Leader>s :w<CR>:call RunNearestSpec()<CR>
 nnoremap <silent> <Leader>l :w<CR>:call RunLastSpec()<CR>

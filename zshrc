@@ -40,7 +40,6 @@ alias wds='node_modules/webpack-dev-server/bin/webpack-dev-server.js'
 export EDITOR='nvim'
 
 eval "$(rbenv init -)"
-eval "$(docker-machine env default)"
 
 shitpostgres() {
   launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist

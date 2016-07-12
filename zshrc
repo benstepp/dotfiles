@@ -62,3 +62,10 @@ delete_all_docker_shit() {
 docker_aws() {
   eval $(aws ecr get-login --region us-east-1)
 }
+
+update_all() {
+  brew update && \
+    brew upgrade && \
+    brew reinstall --HEAD neovim && \
+    upgrade_oh_my_zsh
+}

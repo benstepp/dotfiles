@@ -17,9 +17,9 @@ PROMPT='[%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{
 
 export PGPASSFILE='~/.pgpass'
 
-alias rgm='rails g migration'
-alias rs='rails server'
-alias rc='rails console'
+alias rgm='bundle exec rails g migration'
+alias rs='bundle exec rails server'
+alias rc='bundle exec rails console'
 alias rdbm='rake db:migrate && RAILS_ENV=test rake db:migrate'
 alias rdbr='rake db:rollback && RAILS_ENV=test rake db:rollback'
 alias g='hub'
@@ -48,7 +48,7 @@ shitpostgres() {
 }
 
 rsb() {
-  rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')
+  bundle exec rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')
 }
 
 delete_all_docker_shit() {

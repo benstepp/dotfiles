@@ -3,3 +3,5 @@ linters:
     style: include_zero
   QualifyingElement:
     allow_element_with_class: true
+  PseudoElement:
+    enabled: false

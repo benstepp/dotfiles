@@ -178,7 +178,7 @@ hi SpecialKey      ctermfg=59
 let delimitMate_expand_cr = 1
 let delitmitMate_expand_space = 1
 let g:ctrlp_working_path_mode = 'r'
-" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:typescript_indent_disable = 1
 let g:jsx_ext_required = 0
 let NERDTreeRespectWildIgnore = 1

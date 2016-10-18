@@ -5,3 +5,6 @@ linters:
     allow_element_with_class: true
   PseudoElement:
     enabled: false
+  PropertySpelling:
+    extra_properties:
+      - composes

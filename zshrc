@@ -67,5 +67,6 @@ update_all() {
   brew update && \
     brew upgrade && \
     brew reinstall --HEAD neovim && \
-    upgrade_oh_my_zsh
+    upgrade_oh_my_zsh && \
+    nvim +PlugUpdate +q +q
 }

@@ -13,7 +13,7 @@ export PATH="~/.rbenv/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
 GIT_PROMPT_EXECUTABLE="haskell"
-PROMPT='[%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:%{$fg[cyan]%}%c%{$reset_color%}] $(git_super_status)$ '
+PROMPT='💁  [%c] $(git_super_status)$ '
 
 export PGPASSFILE='~/.pgpass'
 

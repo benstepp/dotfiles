@@ -18,6 +18,7 @@
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key "h" 'split-window-below)
 (evil-leader/set-key "v" 'split-window-right)
+(evil-leader/set-key "p" 'helm-browse-project)
 
 ;are these real fucking vim bindings?
 (define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
@@ -37,6 +38,7 @@
 (define-key evil-insert-state-map "\C-p" 'evil-previous-line)
 (define-key evil-visual-state-map "\C-p" 'evil-previous-line)
 (define-key evil-normal-state-map "\C-u" 'evil-scroll-up)
+(define-key evil-normal-state-map "\C-x" 'kill-this-buffer)
 
 ;line numbers
 (global-linum-mode 1)
@@ -55,7 +57,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm molokai-theme evil-rails evil-leader))))
+    (helm-ls-git helm molokai-theme evil-rails evil-leader))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -66,3 +68,9 @@
 ;follow symlinks 
 (setq vc-follow-symlinks nil)
 (setq find-file-visit-truename t)
+
+;ctrlp thing
+(require 'helm-config)
+(require 'helm-ls-git)
+(setq helm-mode-fuzzy-match t)
+(setq helm-completion-in-region-fuzzy-match t)

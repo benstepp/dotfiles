@@ -36,6 +36,7 @@
 (define-key evil-normal-state-map "\C-p" 'evil-previous-line)
 (define-key evil-insert-state-map "\C-p" 'evil-previous-line)
 (define-key evil-visual-state-map "\C-p" 'evil-previous-line)
+(define-key evil-normal-state-map "\C-u" 'evil-scroll-up)
 
 ;line numbers
 (global-linum-mode 1)
@@ -47,10 +48,21 @@
 ;bootyful colors
 (require 'molokai-theme)
 
-;fast find stuff
-(require 'ido)
-(require 'ido-better-flex)
-(require 'ido-vertical-mode)
-(ido-mode 1)
-(setq ido-everywhere 1)
-(setq ido-enable-flex-matching 1)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (helm molokai-theme evil-rails evil-leader))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;follow symlinks 
+(setq vc-follow-symlinks nil)
+(setq find-file-visit-truename t)

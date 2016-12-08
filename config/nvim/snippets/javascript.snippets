@@ -17,6 +17,19 @@ snippet ()
 	(${1}) => {
 	}
 snippet comp
+	import React, { Component, PropTypes } from 'react'
+
+	export default class ${1} extends Component {
+		static propTypes = {
+		}
+
+		render() {
+			return (
+				<div></div>
+			)
+		}
+	}
+snippet pure
 	import React, { PureComponent, PropTypes } from 'react'
 
 	export default class ${1} extends PureComponent {
@@ -28,4 +41,12 @@ snippet comp
 				<div></div>
 			)
 		}
+	}
+snippet sfc
+	import React, { PropTypes } from 'react'
+
+	export default function ${1}() {
+		return (
+			<div></div>
+		)
 	}

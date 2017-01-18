@@ -30,3 +30,6 @@ Style/RegexpLiteral:
   AllowInnerSlashes: false
   EnforcedStyle: slashes
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

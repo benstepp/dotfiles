@@ -50,3 +50,14 @@ snippet sfc
 			<div></div>
 		)
 	}
+snippet rt
+	import React from 'react'
+	import { shallow } from 'enzyme'
+	import `substitute(Filename(), '.test', '', '')` from './`substitute(Filename(), '.test', '', '')`'
+
+	describe('<`substitute(Filename(), '.test', '', '')` />', () => {
+		it('renders', () => {
+			const wrapper = shallow(<`substitute(Filename(), '.test', '', '')` />)
+			expect(wrapper.length).toBeTruthy
+		})
+	})

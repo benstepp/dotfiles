@@ -48,6 +48,7 @@ set wildignore+=*/tmp/*,*.so,*.swp*,*.zip,*/node_modules/*
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*\\node_modules\\*
 set wildignore+=*/stylesheets/bourbon/*,*/stylesheets/neat/*
 set wildignore+=*/wp-admin/*,*/wp-includes/*
+set wildignore+=*/_build/*,*/deps/*
 set wildmode=list:longest,list:full
 
 filetype plugin indent on

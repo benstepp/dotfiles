@@ -61,3 +61,16 @@ snippet rt
 			expect(wrapper.length).toBeTruthy
 		})
 	})
+snippet connect
+	import { connect } from 'react-redux'
+	import `expand('%:p:h:t')` from './`expand('%:p:h:t')`'
+
+	function mapStateToProps(state) {
+		return {}
+	}
+
+	function mapDispatchToProps(dispatch) {
+		return {}
+	}
+
+	export default connect(mapStateToProps, mapDispatchToProps)(`expand('%:p:h:t')`)

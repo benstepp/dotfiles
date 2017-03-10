@@ -43,6 +43,7 @@ set tabstop=2
 set title
 set ttyfast
 set wildignore+=.DS_Store
+set wildignore+=*.o
 set wildignore+=*.jpg,*.jpeg,*.gif,*.png,*.psd
 set wildignore+=*/tmp/*,*.so,*.swp*,*.zip,*/node_modules/*
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe,*\\node_modules\\*

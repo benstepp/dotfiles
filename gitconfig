@@ -16,3 +16,4 @@
   db = !sh -c 'git branch -D $1 && git push origin :$1' -
   df = --no-pager diff
   mu = !sh -c 'git checkout master && git fetch upstream && git merge upstream/master && git push'
+  wc = whatchanged -p -1

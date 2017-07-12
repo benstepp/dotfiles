@@ -8,6 +8,10 @@
   default = simple
 [github]
   user = benstepp
+[mergetool]
+  prompt = false
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [merge]
   ff = only
 [alias]

@@ -17,7 +17,7 @@ snippet ()
 	(${1}) => {
 	}
 snippet comp
-	import React, { Component, PropTypes } from 'react'
+	import React, { Component } from 'react'
 
 	export default class ${1} extends Component {
 		static propTypes = {
@@ -30,7 +30,7 @@ snippet comp
 		}
 	}
 snippet pure
-	import React, { PureComponent, PropTypes } from 'react'
+	import React, { PureComponent } from 'react'
 
 	export default class ${1} extends PureComponent {
 		static propTypes = {
@@ -43,7 +43,7 @@ snippet pure
 		}
 	}
 snippet sfc
-	import React, { PropTypes } from 'react'
+	import React from 'react'
 
 	export default function ${1}() {
 		return (
@@ -58,7 +58,7 @@ snippet rt
 	describe('<`substitute(Filename(), '.test', '', '')` />', () => {
 		it('renders', () => {
 			const wrapper = shallow(<`substitute(Filename(), '.test', '', '')` />)
-			expect(wrapper.length).toBeTruthy
+			expect(wrapper.length).toBe(1)
 		})
 	})
 snippet connect
@@ -74,3 +74,5 @@ snippet connect
 	}
 
 	export default connect(mapStateToProps, mapDispatchToProps)(`expand('%:p:h:t')`)
+snippet ed
+	export default from './`expand('%:p:h:t')`'

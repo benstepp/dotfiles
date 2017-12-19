@@ -184,7 +184,7 @@ let g:typescript_indent_disable = 1
 let g:jsx_ext_required = 0
 let NERDTreeRespectWildIgnore = 1
 let NERDTreeCascadeSingleChildDir = 0
-let g:rspec_command = ':call Send_to_Tmux("RAILS_ENV=test rspec --color {spec}\n")'
+let g:rspec_command = ':call Send_to_Tmux("RAILS_ENV=test bundle exec rspec --color {spec}\n")'
 let g:VtrOrientation = 'h'
 let g:VtrPercentage = 30
 let g:markdown_preview_eager = 1

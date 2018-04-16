@@ -9,6 +9,7 @@ plugins=()
 
 export PATH="/usr/local/Cellar/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
 export PATH="~/.rbenv/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 

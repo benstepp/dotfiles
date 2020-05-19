@@ -4,6 +4,7 @@
 [user]
   name = Benjamin Stepp
   email = me@benstepp.com
+	signingkey = D8B48AC99A83CB2F
 [push]
   default = simple
 [github]
@@ -21,3 +22,5 @@
   df = --no-pager diff
   mu = !sh -c 'git checkout master && git fetch upstream && git merge upstream/master && git push'
   wc = whatchanged -p -1
+[commit]
+	gpgsign = true

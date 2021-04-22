@@ -58,21 +58,18 @@ syntax on
 
 call plug#begin('~/.nvim/plugged')
 
-Plug 'benekastah/neomake'
-Plug 'benjie/neomake-local-eslint.vim'
 Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'christoomey/vim-tmux-runner'
 Plug 'garbas/vim-snipmate'
 Plug 'glench/vim-jinja2-syntax'
 Plug 'jgdavey/tslime.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'mxw/vim-jsx'
+Plug 'neomake/neomake'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'raimondi/delimitmate'
-Plug 'rhysd/nyaovim-markdown-preview'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/snipmate-snippets'
 Plug 'shougo/vimproc.vim', { 'do': 'make' }
@@ -82,7 +79,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
-Plug 'thoughtbot/vim-rspec'
+Plug 'vim-test/vim-test'
 
 call plug#end()
 
@@ -98,21 +95,27 @@ let g:typescript_indent_disable = 1
 let g:jsx_ext_required = 0
 let NERDTreeRespectWildIgnore = 1
 let NERDTreeCascadeSingleChildDir = 0
-let g:rspec_command = ':call Send_to_Tmux("RAILS_ENV=test bundle exec rspec --color {spec}\n")'
-let g:VtrOrientation = 'h'
-let g:VtrPercentage = 30
 let g:markdown_preview_eager = 1
+let g:snipMate = {'snippet_version': 1}
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#syntastic#enabled = 1
 
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_js_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
+"let g:neomake_javascript_enabled_makers = ['eslint']
+"let g:neomake_js_enabled_makers = ['eslint']
+"let g:neomake_jsx_enabled_makers = ['eslint']
 "let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_html_enabled_makers = []
+
+let g:tslime = {}
+let g:tslime['session'] = 0
+"let g:tslime['session'] = ! 'tmux display-message -p "#S"'
+let g:tslime['session'] = str2nr(system('tmux display-message -p "#S"'))
+let g:tslime['window'] = 3
+let g:tslime['pane'] = 1
+let test#strategy = "tslime"
 
 let mapleader = ' '
 nnoremap <Leader>q :bp <BAR> bd #<CR>
@@ -122,11 +125,9 @@ nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>p :CtrlP<CR>
 nnoremap <Leader>= mpHmhgg=G'hzt'p
 nnoremap <Leader>-  vi{:'<,'>sort<CR>
-nnoremap <silent> <Leader>t :w<CR>:call RunCurrentSpecFile()<CR>
-nnoremap <silent> <Leader>s :w<CR>:call RunNearestSpec()<CR>
-nnoremap <silent> <Leader>l :w<CR>:call RunLastSpec()<CR>
-nnoremap <silent> <Leader>fr :VtrFocusRunner<CR>
-nnoremap <silent> <Leader>fe :VtrDetachRunner<CR>
+nnoremap <silent> <Leader>t :w<CR> :TestFile<CR>
+nnoremap <silent> <Leader>s :w<CR> :TestNearest<CR>
+nnoremap <silent> <Leader>l :w<CR> :TestLast<CR>
 
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>

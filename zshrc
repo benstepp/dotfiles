@@ -1,13 +1,14 @@
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.config/.bin:$PATH"
+
 export ZSH=~/.oh-my-zsh
 source "$ZSH/custom/zsh-git-prompt/zshrc.sh"
 ZSH_THEME="robbyrussell"
-
-plugins=()
-
 source $ZSH/oh-my-zsh.sh
-
 GIT_PROMPT_EXECUTABLE="haskell"
 PROMPT='💁  [%c] $(git_super_status)$ '
+plugins=()
 
 alias g='hub'
 alias git='hub'
@@ -20,10 +21,12 @@ alias gpr='hub pull-request'
 alias sudo='sudo '
 alias vim='nvim'
 alias vi='nvim'
-alias http='python -m SimpleHTTPServer 9000'
+alias http='python -m http.server 9000'
 alias dcr='docker-compose run --rm '
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+alias spotify='spotify --force-device-scale-factor=2'
+alias hist='history | grep '
 
 export EDITOR='nvim'
 
@@ -36,8 +39,9 @@ delete_all_docker_shit() {
 }
 
 docker_aws() {
-  eval $(aws ecr get-login --region us-east-1)
+  eval $(aws ecr get-login --region us-east-1 --no-include-email)
 }
+
 
 update_all() {
   brew update && \
@@ -46,3 +50,5 @@ update_all() {
     upgrade_oh_my_zsh && \
     nvim +PlugUpdate +q +q
 }
+
+. /opt/asdf-vm/asdf.sh

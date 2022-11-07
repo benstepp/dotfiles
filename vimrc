@@ -108,6 +108,8 @@ let g:airline#extensions#syntastic#enabled = 1
 "let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_html_enabled_makers = []
 
+let g:NERDTreeMinimalMenu=1
+
 let g:tslime = {}
 let g:tslime['session'] = 0
 "let g:tslime['session'] = ! 'tmux display-message -p "#S"'

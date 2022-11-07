@@ -58,23 +58,22 @@ syntax on
 
 call plug#begin('~/.nvim/plugged')
 
-Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'garbas/vim-snipmate'
 Plug 'glench/vim-jinja2-syntax'
 Plug 'jgdavey/tslime.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'mxw/vim-jsx'
 Plug 'neomake/neomake'
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/yajs.vim'
+Plug 'preservim/nerdtree'
 Plug 'raimondi/delimitmate'
-Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/snipmate-snippets'
 Plug 'shougo/vimproc.vim', { 'do': 'make' }
 Plug 'sheerun/vim-polyglot'
 Plug 'tomtom/tlib_vim'
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
